@@ -1,0 +1,17 @@
+
+apply plugin: 'cpp'
+
+model {
+    components {
+        main (NativeExecutableSpec) {
+            binaries.all {
+                cppCompiler.args "-O3", "-std=c++14", "-I$BOOST_HOME", "-Isrc/main/headers"
+                linker.args "-lstdc++"
+            }
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.8'
+}
