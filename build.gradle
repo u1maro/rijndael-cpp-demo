@@ -5,7 +5,7 @@ model {
     components {
         main (NativeExecutableSpec) {
             binaries.all {
-                cppCompiler.args "-O3", "-std=c++14", "-I$BOOST_HOME", "-Isrc/main/headers"
+                cppCompiler.args "-O3", "-std=c++14", "-I$BOOST_HOME"
                 linker.args "-lstdc++"
             }
         }
